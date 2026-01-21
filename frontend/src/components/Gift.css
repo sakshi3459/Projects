@@ -1,0 +1,127 @@
+.gift-container {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gift-box {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gift-box:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.gift-bow {
+  font-size: 32px;
+  margin-bottom: -10px;
+  animation: bow-float 2s ease-in-out infinite;
+}
+
+.gift-body {
+  font-size: 64px;
+  animation: gift-bounce 2s ease-in-out infinite;
+}
+
+.gift-hint {
+  font-size: 12px;
+  color: #8B4513;
+  margin-top: 8px;
+  font-family: 'Press Start 2P', monospace;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.gift-box.opening {
+  animation: shake 0.8s ease-in-out;
+}
+
+.gift-revealed {
+  text-align: center;
+  animation: reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.gift-item {
+  font-size: 80px;
+  margin-bottom: 10px;
+  animation: item-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.gift-item-name {
+  font-size: 20px;
+  color: #2C3E50;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.gift-message {
+  font-size: 14px;
+  color: #8B4513;
+  font-style: italic;
+}
+
+@keyframes bow-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gift-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  10% { transform: translateX(-10px) rotate(-5deg); }
+  20% { transform: translateX(10px) rotate(5deg); }
+  30% { transform: translateX(-10px) rotate(-5deg); }
+  40% { transform: translateX(10px) rotate(5deg); }
+  50% { transform: translateX(-10px) rotate(-5deg); }
+  60% { transform: translateX(10px) rotate(5deg); }
+  70% { transform: translateX(-10px) rotate(-5deg); }
+  80% { transform: translateX(10px) rotate(5deg); }
+  90% { transform: translateX(-5px) rotate(-2deg); }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes item-pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

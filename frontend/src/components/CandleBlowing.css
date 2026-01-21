@@ -1,0 +1,185 @@
+.candle-blowing-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.cake-display {
+  position: relative;
+  display: inline-block;
+}
+
+.cake-emoji {
+  font-size: 8rem;
+  animation: cake-bounce 2s ease-in-out infinite;
+}
+
+.candles-grid {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.candle-flame {
+  font-size: 2.5rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.candle-flame.lit {
+  animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+.candle-flame.out {
+  opacity: 0.5;
+  animation: blow-away 0.5s ease-out;
+}
+
+.blow-instruction {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin: 20px 0;
+  font-weight: bold;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.blow-button {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+  margin-top: 20px;
+}
+
+.blow-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+}
+
+.celebration-message {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: 15px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.celebration-message h3 {
+  color: #e17055;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.audio-meter {
+  margin: 20px auto;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #667eea;
+}
+
+.audio-meter-label {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.audio-meter-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.audio-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80 0%, #22c55e 50%, #ef4444 100%);
+  transition: width 0.1s ease;
+}
+
+.audio-meter-value {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+.test-mic-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.test-mic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes blow-away {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .candles-grid {
+    gap: 12px;
+  }
+
+  .candle-flame {
+    font-size: 2rem;
+  }
+
+  .cake-emoji {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .candles-grid {
+    gap: 10px;
+  }
+
+  .candle-flame {
+    font-size: 1.8rem;
+  }
+
+  .cake-emoji {
+    font-size: 5rem;
+  }
+}

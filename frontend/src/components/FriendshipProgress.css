@@ -1,0 +1,151 @@
+.friendship-progress-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border: 3px solid #8B4513;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.friendship-progress-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.friendship-icon {
+  font-size: 24px;
+  animation: heart-beat 1.5s ease-in-out infinite;
+}
+
+.friendship-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2C3E50;
+  flex: 1;
+}
+
+.friendship-count {
+  font-size: 14px;
+  color: #8B4513;
+  font-weight: bold;
+}
+
+.friendship-progress-bar {
+  width: 100%;
+  height: 28px;
+  background: #E0E0E0;
+  border: 2px solid #8B4513;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.friendship-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF69B4 0%, #FFD700 50%, #FF6347 100%);
+  transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.friendship-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+.friendship-percentage {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.friendship-milestones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.milestone.reached {
+  opacity: 1;
+  background: rgba(255, 215, 0, 0.2);
+  animation: milestone-unlock 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.milestone-icon {
+  font-size: 20px;
+}
+
+.milestone-name {
+  font-size: 9px;
+  color: #2C3E50;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes milestone-unlock {
+  0% {
+    transform: scale(0) rotate(-180deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
