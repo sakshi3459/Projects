@@ -3,9 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Set base URL for GitHub Pages
-  // Update 'jays-birthday' to match your actual GitHub repo name
-  base: '/jays-birthday/',
+  // Set base URL for GitHub Pages - matches repo name
+  base: '/Projects/',
   server: {
     port: 5173,
     proxy: {
